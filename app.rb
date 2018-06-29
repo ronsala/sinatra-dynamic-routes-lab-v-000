@@ -35,8 +35,9 @@ class App < Sinatra::Base
       operator = *
     when 'divide'
       operator = /
-      
     end
+    result = params[:number1].to_i operator params[:number2].to_i
+    result.to_s
   end
 
 end
