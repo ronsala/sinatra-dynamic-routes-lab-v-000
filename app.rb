@@ -26,8 +26,17 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    @reversed = params[:name].reverse
-    "#{@reversed}"
+    case params[:operation]
+    when 'add'
+      operator = +
+    when 'subtract'
+      operator = -
+    when 'multiply'
+      operator = *
+    when 'divide'
+      operator = /
+      
+    end
   end
 
 end
